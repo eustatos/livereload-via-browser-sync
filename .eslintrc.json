@@ -4,5 +4,9 @@
         "react",
         "jsx-a11y",
         "import"
-    ]
+    ],
+    "rules": {
+        // https://github.com/benmosher/eslint-plugin-import/issues/469
+        "import/no-extraneous-dependencies": [2, {"devDependencies": true}]
+    }
 }
