@@ -60,7 +60,15 @@ gulp.task('images', () => {
         }));
 });
 
-gulp.task('watch', ['browserSync', 'less', 'html', 'icons', 'scripts'], () => {
+gulp.task('video', () => {
+  gulp.src('./src/video/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('./dist/video'))
+        .pipe(browserSync.reload({
+          stream: true,
+        }));
+});
+gulp.task('watch', ['browserSync', 'less', 'html', 'icons', 'scripts', 'images', 'video'], () => {
   gulp.watch('./src/less/**/*.less', () => {
     gulp.run('less');
   });
