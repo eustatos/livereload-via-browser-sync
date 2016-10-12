@@ -33,7 +33,7 @@ gulp.task('browserSync', () => {
 });
 
 gulp.task('html', () => {
-  gulp.src('./src/**/*.html')
+  gulp.src([ './src/**/*.html', './src/*.*' ])
     .pipe(gulp.dest('./dist'))
     .pipe(browserSync.reload({
       stream: true,
